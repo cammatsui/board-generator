@@ -36,30 +36,35 @@ var delay = 0;
 
 //======================================================================================================================
 // DRAWING PARAMETERS
+const canvasCenterX = canvas.width / 2;
+const canvasCenterY = canvas.height / 2;
+
+// Hexagon parameters.
 const hexRadius = canvas.height / 12.2;
 const hexBorderWidth = hexRadius / 12;
 const horizontalHexDist = (2 * hexRadius * Math.sin(Math.PI / 3)) + (hexBorderWidth / 2);
 const verticalHexDist = (3*hexRadius)/2 + (hexBorderWidth / 2);
 
+// Number chit parameters.
 const numberRadius = hexRadius / 4;
 const numberBorderWidth = numberRadius / 3;
 const numberFill = "#dbc99a";
 var fontSize = Math.floor(1.3 * numberRadius);
 c.font = fontSize + "px Arial";
-const portFontSize = Math.floor(fontSize * 0.6);
 
-const canvasCenterX = canvas.width / 2;
-const canvasCenterY = canvas.height / 2;
-
+// Port parameters.
 const portRadius = horizontalHexDist * 0.7;
 const portChitRadius = numberRadius * 0.85;
 const portWidth = hexRadius / 6;
 const portLength = 2.5 * portWidth;
 const portBorderWidth = numberBorderWidth;
 const portColor = "#402c0a";
+const portFontSize = Math.floor(fontSize * 0.6);
 
+// Delay on drawing next.
 const wait = 23;
 
+// Ressource colors.
 const resourceColorMap = {
     "Brick" : "#D9514E",
     "Lumber" : "#054d15",
@@ -70,8 +75,7 @@ const resourceColorMap = {
     "Mystery" : "#a3559f"
 };
 
-// MAPS FROM TILE ID TO ROW, COLUMN
-
+// Maps from tile id to row and column on the board.
 const standardIdToRowCol = [
     [0, 0], /* 0*/ [0, 1], /* 1*/ [0, 2], /* 2*/ [1, 3], /* 3*/ [2, 4], /* 4*/ [3, 3], /* 5*/ [4, 2], /* 6*/ 
     [4, 1], /* 7*/ [4, 0], /* 8*/ [3, 0], /* 9*/ [2, 0], /*10*/ [1, 0], /*11*/ [1, 1], /*12*/ [1, 2], /*13*/

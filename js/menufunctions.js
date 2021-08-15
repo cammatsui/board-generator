@@ -41,12 +41,13 @@ const numberSettlementOptions = {
 
 
 //======================================================================================================================
+/**
+ * Show/hide the mobile menu. 
+ */
 function updateMobileMenu() {
     var mobileHeader = document.getElementById("mobile-header");
     var menu = document.getElementById("sidebar");
-    var collapseButton = document.getElementById("collapse");
     var expandButton = document.getElementById("expand");
-    var generateButton = document.getElementById("generate");
     if (window.getComputedStyle(mobileHeader).display === "none") {
         // Hide menu, show mobile header
         menu.style.display='none';
@@ -87,7 +88,7 @@ function updateSlider(options) {
 
 //======================================================================================================================
 /**
- * Update sliders.
+ * Update the sliders.
  */
 function updateResourcesSlider() { updateSlider(resourceOptions) }
 function updateNumberResourcesSlider() { updateSlider(numberResourceOptions) }
