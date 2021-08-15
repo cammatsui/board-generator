@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Board Generator</title>
+        <meta name="description" content="An algorithm to generate game boards for Settlers of Catan.">
+        <meta charset="utf-8">
+        <meta name="robots" content="index,follow">
+        <link rel="icon" href="assets/icon.png">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <script type="module" src="js/menufunctions.js"></script>
+    </head>
+    <body style="background-color:#225675">
+        <!-- Sidebar/menu bar -->
+        <div id="mobile-header">
+            <h1 class="sidebar-text" id="logo">Board Generator</h1>
+            <button id="expand" onclick="updateMobileMenu()" class="collapse-button">Expand</button>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <!-- logo -->
+            <div style="display: inline-block">
+                <h1 class="sidebar-text" id="logo">Board Generator</h1>
+                <button id="collapse" onclick="updateMobileMenu()" class="collapse-button">Collapse</button>
+            </div>
+            <!-- scenario submenu -->
+            <h3 class="sidebar-text menu-subtitle">Scenario:</h3>
+            <div class="option-submenu">
+                <div>
+                    <input type="radio" id="scenario-standard" name="scenario" value="standard" checked>
+                    <label class="sidebar-text" for="scenario-standard">Standard</label>
+                </div>
+                <div>
+                    <input type="radio" id="scenario-expansion" name="scenario" value="expansion">
+                    <label class="sidebar-text" for="scenario-expansion">Expansion</label>
+                </div>
+            </div>
+            <!-- resource submenu -->
+            <h3 class="sidebar-text menu-subtitle">Resource Distribution:</h3>
+            <div class="option-submenu">
+                <div>
+                    <input type="radio" id="tiles-random" name="tile-placement" value="random" checked onclick="updateResourcesSlider()">
+                    <label class="sidebar-text" for="tiles-random">Random</label>
+                </div>
+                <div>
+                    <input type="radio" id="tiles-clump" name="tile-placement" value="clumped" onclick="updateResourcesSlider()">
+                    <label class="sidebar-text" for="tiles-clump">Choose Distribution</label>
+                </div>
+                <!-- resource slider -->
+                <div class="slidecontainer" id="resource-slider-div">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="resource-slider">
+                    <div class="slider-labels">
+                        <p class="sidebar-text alignleft">Dispersed</p>
+                        <p class="sidebar-text alignright">Clumped</p>
+                        <div style="clear : both;"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- number submenu -->
+            <h3 class="sidebar-text menu-subtitle">Number Placement:</h3>
+            <div class="option-submenu">
+                <div>
+                    <input type="radio" id="numbers-random" name="number-placement" value="random" checked onclick="updateNumberSliders()">
+                    <label class="sidebar-text" for="numbers-random">Fully Random</label>
+                </div>
+                <div>
+                    <input type="radio" id="numbers-pseudorandom" name="number-placement" value="pseudorandom" onclick="updateNumberSliders()">
+                    <label class="sidebar-text" for="numbers-pseudorandom">No Adjacent Red Numbers</label>
+                </div>
+                <div>
+                    <input type="radio" id="numbers-resource" name="number-placement" value="resource-variance" onclick="updateNumberSliders()">
+                    <label class="sidebar-text" for="numbers-resource">Choose Resource Balance</label>
+                </div>
+                <!-- number slider: resources -->
+                <div class="slidecontainer" id="number-slider-resource-div">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="number-slider-resource">
+                    <div class="slider-labels">
+                        <p class="sidebar-text alignleft">Unbalanced</p>
+                        <p class="sidebar-text alignright">Balanced</p>
+                        <div style="clear : both;"></div>
+                    </div>
+                </div>
+                <div>
+                    <input type="radio" id="numbers-settlement" name="number-placement" value="settlement-resource-variance" onclick="updateNumberSliders()">
+                    <label class="sidebar-text" for="numbers-settlement">Choose Settlement Balance</label>
+                </div>
+                <!-- number slider: settlements -->
+                <div class="slidecontainer" id="number-slider-settlement-div">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="number-slider-settlement">
+                    <div class="slider-labels">
+                        <p class="sidebar-text alignleft">Unbalanced</p>
+                        <p class="sidebar-text alignright">Balanced</p>
+                        <div style="clear : both;"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- deserts submenu -->
+            <h3 class="sidebar-text menu-subtitle">Deserts:</h3>
+            <div class="option-submenu">
+                <div>
+                    <input type="radio" id="deserts-random" name="desert" value="random" checked>
+                    <label class="sidebar-text" for="deserts-random">Random</label>
+                </div>
+                <div>
+                    <input type="radio" id="deserts-centered" name="desert" value="centered">
+                    <label class="sidebar-text" for="deserts-centered">Centered</label>
+                </div>
+            </div>
+            <!-- ports submenu -->
+            <h3 class="sidebar-text menu-subtitle">Ports:</h3>
+            <div class="option-submenu">
+                <div>
+                    <input type="radio" id="ports-random" name="ports" value="random" checked>
+                    <label class="sidebar-text" for="ports-random">Random</label>
+                </div>
+                <div>
+                    <input type="radio" id="ports-preset" name="ports" value="preset">
+                    <label class="sidebar-text" for="ports-preset">Preset</label>
+                </div>
+            </div>
+            <div class="vertical-center">
+                <button id="generate" class="button" onclick="makeBoard()"><span>Generate Board</span></button>
+            </div>
+        </div>
+        <div class="board-container" id="boardContainer">
+            <canvas id="boardCanvas"></canvas>
+            <script type="module" src="js/main.js"></script>
+        </div>
+    </body>
+</html>
