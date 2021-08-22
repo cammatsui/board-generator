@@ -112,7 +112,7 @@ export function getExpansionSetup() {
             TileType.ORE,    TileType.ORE,    TileType.ORE,    TileType.ORE,    TileType.ORE
         ]),
         numberDeck: Deck.deckFromArr([
-            11, 11, 6, 5, 10, 10, 5, 2, 3, 8, 4, 11, 10, 8, 4, 5, 9, 3, 12, 9, 6, 12, 8, 4, 2, 5, 3, 9
+            2, 5, 4, 6, 3, 9, 8, 11, 11, 10, 6, 3, 8, 4, 8, 10, 11, 12, 10, 5, 4, 9, 5, 9, 12, 3, 2, 6
         ]),
         portDeck : Deck.deckFromArr([
             Ports.MYSTERY, Ports.WOOL, Ports.MYSTERY, Ports.MYSTERY, Ports.BRICK, Ports.WOOL, Ports.LUMBER,
