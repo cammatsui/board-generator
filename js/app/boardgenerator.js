@@ -185,7 +185,7 @@ export class BoardGenerator {
             var savedNumbersDeck = new Deck();
             for (var j = 0; j < savedNumbers.length; j++) savedNumbersDeck.push(savedNumbers[j]);
 
-            this.board.randomNumberSetup(this.boardPieces.numberDeck);
+            this.board.randomNumberSetupNoAdjacentReds(this.boardPieces.numberDeck);
             this.board['calculate'+varianceType+'Variance']();
 
             this.boardPieces.numberDeck = savedNumbersDeck;
