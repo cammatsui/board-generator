@@ -465,7 +465,7 @@ function drawExpansionBoard(tiles) {
  */
 function makeBoardWithCollapse() {
     updateMobileMenu();
-    makeBoard() {
+    makeBoard();
 } // makeBoardWithCollapse();
 //======================================================================================================================
 
