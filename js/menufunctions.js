@@ -44,7 +44,7 @@ const numberSettlementOptions = {
 /**
  * Show/hide the mobile menu. 
  */
-function updateMobileMenu() {
+export function updateMobileMenu() {
     var mobileHeader = document.getElementById("mobile-header");
     var menu = document.getElementById("sidebar");
     var expandButton = document.getElementById("expand");

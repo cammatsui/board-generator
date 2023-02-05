@@ -4,7 +4,7 @@ import { BoardGenerator } from "./app/boardgenerator.js";
 import { getStandardSetup } from "./app/board/scenarios/standard.js";
 import { getExpansionSetup } from "./app/board/scenarios/expansion.js";
 import { polarToCartesian, tileDirectionToAngle } from "./app/utils.js";
-import { getSubmenuOption } from "./menufunctions.js";
+import { updateMobileMenu, getSubmenuOption } from "./menufunctions.js";
 //======================================================================================================================
 
 
@@ -465,6 +465,7 @@ function drawExpansionBoard(tiles) {
  * Make the board according the the options. 
  */
 function makeBoard() {
+    updateMobileMenu();
     // Clear the canvas.
     c.clearRect(0, 0, canvas.width, canvas.height);
     delay = 0;
