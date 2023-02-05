@@ -459,13 +459,22 @@ function drawExpansionBoard(tiles) {
 //======================================================================================================================
 
 
+//======================================================================================================================
+/**
+ * Make the board and collapse the mobile menu.
+ */
+function makeBoardWithCollapse() {
+    updateMobileMenu();
+    makeBoard() {
+} // makeBoardWithCollapse();
+//======================================================================================================================
+
 
 //======================================================================================================================
 /**
  * Make the board according the the options. 
  */
 function makeBoard() {
-    updateMobileMenu();
     // Clear the canvas.
     c.clearRect(0, 0, canvas.width, canvas.height);
     delay = 0;
