@@ -524,3 +524,4 @@ function makeBoard() {
 // Make the initial board and make the makeBoard function global.
 makeBoard();
 window.makeBoard = makeBoard;
+window.makeBoardWithCollapse = makeBoardWithCollapse;
